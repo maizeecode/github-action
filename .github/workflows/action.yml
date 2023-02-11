@@ -1,0 +1,15 @@
+name: Github action
+
+on: [push]
+
+jobs:
+  action-output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Moses
+      - name: Use output
+        run: echo "Time to execute is ${{ steps.greet.output.time }}"
