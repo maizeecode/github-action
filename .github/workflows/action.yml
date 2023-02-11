@@ -13,3 +13,6 @@ jobs:
           who-to-greet: Moses
       - name: Use output
         run: echo "Time to execute is ${{ steps.greet.output.time }}"
+      - name: Github checkout
+        uses: actions/checkout@v3
+        run: ls -a
